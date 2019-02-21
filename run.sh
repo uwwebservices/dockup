@@ -1,9 +1,13 @@
 #!/bin/bash
 
+# Get env vars
+. /config/env.sh
+
 if [[ "$RESTORE" == "true" ]]; then
   ./restore.sh
 else
-  ./backup.sh
+  # enable this to run a backup on container start
+  #./backup.sh
 fi
 
 if [ -n "$CRON_TIME" ]; then
@@ -11,4 +15,6 @@ if [ -n "$CRON_TIME" ]; then
   crontab  /crontab.conf
   echo "=> Running dockup backups as a cronjob for ${CRON_TIME}"
   exec cron -f
+else
+  ./backup.sh
 fi
