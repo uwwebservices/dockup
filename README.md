@@ -25,7 +25,7 @@ export CRON_TIME=0\ 2\ *\ *\ * # every night at 2am
 
 ### Volumes
 
-`/backup` - mount the folder to be backed up here
+`/backup` - mount the folder to be backed up here  
 `/config/env.sh` - environment variables to control backups
 
 ### Environment Variables
