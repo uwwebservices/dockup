@@ -20,6 +20,7 @@ if [ -n "$CRON_TIME" ]; then
   echo "=> Running dockup backups as a cronjob for ${CRON_TIME}"
   exec cron -f
 else
-  echo "Running a one off backup"
+  echo "Running a one off backup..."
   ./backup.sh
+  echo "Done with one off backup."
 fi
